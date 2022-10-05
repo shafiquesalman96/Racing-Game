@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckpointsandLaps : MonoBehaviour
+public class CheckpointsAndLaps : MonoBehaviour
 {
     [Header("Points")]
     public GameObject start;
@@ -132,4 +132,15 @@ public class CheckpointsandLaps : MonoBehaviour
             }
         }
     }
+
+    private void OnGUI()
+    {
+        // Current time
+        string formattedCurrentLapTime = $"Current: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.000} - (Lap {currentLap})";
+        GUI.Label(new Rect(50, 10, 250, 100), formattedCurrentLapTime);
+
+        // Best time
+        string formattedBestLapTime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.000} - (Lap {bestLap})";
+        GUI.Label(new Rect(250, 10, 250, 100), (started) ? formattedBestLapTime : "0:00.000");
     }
+}
