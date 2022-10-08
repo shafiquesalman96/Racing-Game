@@ -36,7 +36,11 @@ public class Countdown : MonoBehaviour
 		CountDown.SetActive(true);
 		yield return new WaitForSeconds(1);
 		CountDown.SetActive(false);
+		CountDown.GetComponent<Text>().text = "GO!";
 		GoAudio.Play();
+		CountDown.SetActive(true);
+		yield return new WaitForSeconds(1);
+		CountDown.SetActive(false);
 		LapTimer.SetActive(true);
 		CarControls.SetActive(true);
 
