@@ -9,5 +9,6 @@ public class CarControlActive : MonoBehaviour
     void Start()
     {
         CarControl.GetComponent<CarController>().enabled = true;
+      
     }
 }
